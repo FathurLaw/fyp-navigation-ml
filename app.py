@@ -3,10 +3,11 @@ import joblib
 import pandas as pd
 import numpy as np
 import ast
+import os
 
 app = Flask(__name__)
 
-# Load models and scalers
+# Load models and scalers once when app starts
 xgb_eta = joblib.load("xgb_eta_model.pkl")
 xgb_dist = joblib.load("xgb_dist_model.pkl")
 scaler_eta = joblib.load("scaler_eta.pkl")
@@ -29,10 +30,6 @@ def predict():
         end_lon = float(request.form['end_lon'])
 
         input_data = pd.DataFrame([[start_lat, start_lon, end_lat, end_lon]], columns=model_features)
-
-        # Load scalers
-        scaler_eta = joblib.load("scaler_eta.pkl")
-        scaler_dist = joblib.load("scaler_distance.pkl")
 
         # Predict (scaled)
         predicted_eta_scaled = xgb_eta.predict(input_data)[0]
@@ -76,4 +73,5 @@ def get_path():
         return jsonify({"error": f"Path lookup failed: {str(e)}"})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
