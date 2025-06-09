@@ -1,0 +1,107 @@
+[
+  {
+    "name":"Academic Block",
+    "lat":3.005997,
+    "lon":101.721394
+  },
+  {
+    "name":"Administration Block",
+    "lat":3.006333,
+    "lon":101.720479
+  },
+  {
+    "name":"Institute of Nanoscience and Nanotechnology (ION2)",
+    "lat":3.008366,
+    "lon":101.72091
+  },
+  {
+    "name":"Aerospace Engineering Laboratory I",
+    "lat":3.006982,
+    "lon":101.721075
+  },
+  {
+    "name":"Aerospace Engineering Laboratory II",
+    "lat":3.004261,
+    "lon":101.721313
+  },
+  {
+    "name":"Civil Engineering Laboratory I",
+    "lat":3.00676,
+    "lon":101.720992
+  },
+  {
+    "name":"Civil Engineering Laboratories II",
+    "lat":3.004961,
+    "lon":101.721446
+  },
+  {
+    "name":"Biological & Agriculture Engineering Laboratory I (EAST)",
+    "lat":3.006915,
+    "lon":101.720413
+  },
+  {
+    "name":"Biological & Agriculture Engineering Laboratory II (NORTH)",
+    "lat":3.007784,
+    "lon":101.720685
+  },
+  {
+    "name":"Biological & Agriculture Engineering Laboratories II",
+    "lat":3.004822,
+    "lon":101.722189
+  },
+  {
+    "name":"Electrical and Electronic Engineering Laboratory I",
+    "lat":3.007416,
+    "lon":101.720382
+  },
+  {
+    "name":"Electrical & Electronic Engineering Laboratories II",
+    "lat":3.004173,
+    "lon":101.719735
+  },
+  {
+    "name":"Chemical & Environmental Engineering Laboratory I",
+    "lat":3.007845,
+    "lon":101.72149
+  },
+  {
+    "name":"Chemical & Environmental Engineering Laboratories II",
+    "lat":3.003791,
+    "lon":101.720491
+  },
+  {
+    "name":"Computer & Communication System Engineering Laboratories II",
+    "lat":3.004514,
+    "lon":101.720438
+  },
+  {
+    "name":"Mechanical & Manufacturing Engineering Laboratory I",
+    "lat":3.007385,
+    "lon":101.721337
+  },
+  {
+    "name":"Mechanical & Manufacturing Engineering Laboratories II",
+    "lat":3.004601,
+    "lon":101.721031
+  },
+  {
+    "name":"Process & Food Engineering Laboratory I",
+    "lat":3.008275,
+    "lon":101.721383
+  },
+  {
+    "name":"Process & Food Engineering Laboratories II",
+    "lat":3.003631,
+    "lon":101.71975
+  },
+  {
+    "name":"Engineering and Architecture Library",
+    "lat":3.004833,
+    "lon":101.719575
+  },
+  {
+    "name":"Tower Block",
+    "lat":3.008645,
+    "lon":101.721409
+  }
+]

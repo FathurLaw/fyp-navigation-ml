@@ -1,0 +1,20 @@
+body {
+    scroll-behavior: smooth;
+  }
+  #map {
+    transition: all 0.3s ease-in-out;
+    border-radius: 1rem;
+  }
+
+
+.mapboxgl-popup {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.mapboxgl-popup-content {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}

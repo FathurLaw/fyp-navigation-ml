@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FK Navigation v8</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+      safelist: [
+      "translate-y-full", "translate-y-0"
+    ]
+  };
+  </script>
+
+  <!-- Mapbox -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Header -->
+  <header class="bg-gray-800 shadow p-4 text-center fixed top-0 left-0 right-0 z-50">
+    <h1 class="text-2xl md:text-3xl font-bold text-blue-400">CampusWalkNav</h1>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="flex flex-col md:flex-row pt-20 h-screen">
+
+    <!-- Sidebar / Drawer Panel -->
+    <div id="mobile-drawer"
+      class="md:w-96 w-full md:relative fixed md:static bottom-0 left-1/2 md:left-0 transform md:transform-none -translate-x-1/2 md:translate-x-0 bg-gray-800 bg-opacity-90 p-5 pt-3 md:p-6 rounded-t-xl md:rounded-none z-40 md:z-10 transition-all duration-300 md:translate-y-0 translate-y-0">
+
+      <!-- Drawer Top Bar (Always Visible on Mobile) -->
+      <div class="md:hidden -mx-5 px-5 pt-2 pb-2 flex justify-between items-center border-b border-gray-600">
+        <button id="toggleDrawer" class="w-full text-center">
+          <i id="drawer-icon" class="text-white text-2xl transition-transform">▼</i>
+        </button>
+      </div>
+
+      <!-- Info Section (Still Visible When Collapsed) -->
+      <div id="drawer-info" class="flex justify-between text-xs text-gray-300 mb-4">
+        <p id="weather-info">--</p>
+        <p id="time-info">--</p>
+      </div>
+
+      <!-- Form Section (Hidden When Collapsed) -->
+      <div id="drawer-content">
+        <form id="location-form" class="space-y-4">
+          <div>
+            <label for="start_building" class="block text-sm font-medium text-gray-300">Start Building:</label>
+            <select id="start_building" class="w-full bg-gray-700 border border-gray-600 p-2 rounded-md text-white"></select>
+          </div>
+
+          <div>
+            <label for="end_building" class="block text-sm font-medium text-gray-300">End Building:</label>
+            <select id="end_building" class="w-full bg-gray-700 border border-gray-600 p-2 rounded-md text-white"></select>
+          </div>
+
+          <button id="start-navigation"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition">
+            Start Navigation
+          </button>
+        </form>
+
+        <div id="error-message" class="text-red-500 font-medium mt-2 hidden"></div>
+
+      </div>
+    </div>
+
+            <div id="result" class="fixed top-25 left-1/2 -translate-x-1/2 bg-gray-700 backdrop-blur-md border border-blue-200 rounded-2xl px-4 py-2 shadow-lg flex items-center space-x-4 text-sm font-medium text-gray-100 z-[9999] hidden">
+          <div class="flex items-center space-x-1">
+            <span class="text-blue-500">⏱️</span>
+            <span id="eta">--</span>
+            <span>min</span>
+          </div>
+          <div class="w-px h-4 bg-gray-300"></div>
+          <div class="flex items-center space-x-1">
+            <span class="text-blue-500">📍</span>
+            <span id="distance">--</span>
+            <span>m</span>
+          </div>
+        </div>
+
+    <!-- Map -->
+    <div id="map" class="flex-1 h-[60vh] md:h-full z-0"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
